@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import apiUrl from "../../api/api";
 import "./checkIn.css";
 
 const GuestCheckOut = ({ getFormData, guestData, guestUserStatus, setGuestUserStatus }) => {
@@ -9,7 +10,7 @@ const GuestCheckOut = ({ getFormData, guestData, guestUserStatus, setGuestUserSt
   const [error, setError] = useState(null);
 
   const guestCheckOut = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/formCheckOut`;
+    const url = `${apiUrl}/formCheckOut`;
     const body = { slack_user: guestSlackUser };
 
     if (!guestSlackUser) {
@@ -36,7 +37,7 @@ const GuestCheckOut = ({ getFormData, guestData, guestUserStatus, setGuestUserSt
   };
 
   const deleteFormUser = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/delete`;
+    const url = `${apiUrl}/delete`;
     const body = { slack_user: guestSlackUser };
 
     if (!guestSlackUser) {

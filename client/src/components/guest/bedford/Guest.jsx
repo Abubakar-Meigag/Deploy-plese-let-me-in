@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import apiUrl from "../../api/api";
 import "./guest.css";
 
 function Guest() {
@@ -10,8 +11,8 @@ function Guest() {
   const fetchData = async () => {
     
     try {
-      const keyHolderData = await axios.get(`${process.env.REACT_APP_API_URL}/data`);
-      const guestData = await axios.get(`${process.env.REACT_APP_API_URL}/formData`);
+      const keyHolderData = await axios.get(`${apiUrl}/data`);
+      const guestData = await axios.get(`${apiUrl}/formData`);
 
       const collectData = [...keyHolderData.data, ...guestData.data];
       setKeyHolder(collectData);

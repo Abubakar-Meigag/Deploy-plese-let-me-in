@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import apiUrl from "../../api/api";
 import "./checkIn.css";
 
 const KeyHolderCheckIn = ({ checkInPeople, status, setStatus }) => {
@@ -9,7 +10,7 @@ const KeyHolderCheckIn = ({ checkInPeople, status, setStatus }) => {
   const [error, setError] = useState(null);
 
   const checkMeIn = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/checkIn`;
+    const url = `${apiUrl}/checkIn`;
     const body = { slack_user: keyHolderSlackUser };
 
     if (!keyHolderSlackUser) {
@@ -38,7 +39,7 @@ const KeyHolderCheckIn = ({ checkInPeople, status, setStatus }) => {
   };
 
   const checkMeOut = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/checkOut`;
+    const url = `${apiUrl}/checkOut`;
     const body = { slack_user: keyHolderSlackUser };
 
     if (!keyHolderSlackUser) {

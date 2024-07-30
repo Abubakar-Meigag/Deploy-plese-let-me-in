@@ -4,6 +4,7 @@ import axios from "axios";
 import KeyHolderCheckIn from "./KeyHolderCheckIn";
 import NonKeyHolderCheckIn from "./NonKeyHolderCheckIn";
 import GuestCheckOut from "./GuestCheckOut";
+import apiUrl from "../../api/api";
 
 const CheckIn = () => {
   const [checkInPeople, setCheckInPeople] = useState([]);
@@ -12,7 +13,7 @@ const CheckIn = () => {
   const [guestUserStatus, setGuestUserStatus] = useState({});
 
   const fetchData = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/data`;
+    const url = `${apiUrl}/data`;
     try {
       const response = await axios.get(url);
       setCheckInPeople(response.data);
@@ -31,7 +32,7 @@ const CheckIn = () => {
   };
 
   const guestData = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/formData`;
+    const url = `${apiUrl}/formData`;
     try {
       const response = await axios.get(url);
       setGetFormData(response.data);

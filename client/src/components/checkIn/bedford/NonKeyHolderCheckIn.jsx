@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import apiUrl from "../../api/api";
 import "./checkIn.css";
 
 const NonKeyHolderCheckIn = ({ guestData }) => {
@@ -17,7 +18,7 @@ const NonKeyHolderCheckIn = ({ guestData }) => {
     const formData = { slackUser, phoneNumber };
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/submit`, {
+      const response = await fetch(`${apiUrl}/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

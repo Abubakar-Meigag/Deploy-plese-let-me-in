@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import apiUrl from "../../api/api";
 import "./guestCititec.css";
 
 function GuestCititec() {
@@ -8,7 +9,7 @@ function GuestCititec() {
   const [error, setError] = useState(null);
 
   const fetchData = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/getDataForCititec`;
+    const url = `${apiUrl}/getDataForCititec`;
 
     try {
       const responses = await axios.get(url);

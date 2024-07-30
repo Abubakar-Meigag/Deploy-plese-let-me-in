@@ -2,6 +2,7 @@ import axios from "axios";
 import "./checkIn.css";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import apiUrl from "../../api/api";
 
 const CheckInCititec = () => {
   const [getData, setGetData] = useState([]);
@@ -12,7 +13,7 @@ const CheckInCititec = () => {
 
   // get data from bedford_guest
   const getCititecData = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/getDataForCititec`;
+    const url = `${apiUrl}/getDataForCititec`;
 
     try {
       const response = await axios.get(url);
@@ -27,7 +28,7 @@ const CheckInCititec = () => {
   }, []);
 
   const checkMeIn = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/checkInCititec`;
+    const url = `${apiUrl}/checkInCititec`;
 
     const body = { slack_user: slackUser };
 
@@ -54,7 +55,7 @@ const CheckInCititec = () => {
   };
 
   const checkMeOut = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/checkOutCititec`;
+    const url = `${apiUrl}/checkOutCititec`;
     const body = { slack_user: slackUser };
 
     if (!slackUser) {
