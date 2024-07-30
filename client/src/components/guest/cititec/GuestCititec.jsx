@@ -8,7 +8,7 @@ function GuestCititec() {
   const [error, setError] = useState(null);
 
   const fetchData = async () => {
-    const url = `https://cyf-please-let-me-in.onrender.com/getDataForCititec`;
+    const url = `${process.env.REACT_APP_API_URL}/getDataForCititec`;
 
     try {
       const responses = await axios.get(url);

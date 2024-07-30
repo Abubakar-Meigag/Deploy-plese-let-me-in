@@ -13,7 +13,7 @@ const CheckInCititec = () => {
   // get data from bedford_guest
   const getCititecData = async () => {
     const url = `${process.env.REACT_APP_API_URL}/getDataForCititec`;
-    console.log('Fetching data from:', url)
+
     try {
       const response = await axios.get(url);
       setGetData(response.data);

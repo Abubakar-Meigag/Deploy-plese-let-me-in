@@ -12,7 +12,7 @@ const CheckIn = () => {
   const [guestUserStatus, setGuestUserStatus] = useState({});
 
   const fetchData = async () => {
-    const url = `https://cyf-please-let-me-in.onrender.com/data`;
+    const url = `${process.env.REACT_APP_API_URL}/data`;
     try {
       const response = await axios.get(url);
       setCheckInPeople(response.data);
@@ -31,7 +31,7 @@ const CheckIn = () => {
   };
 
   const guestData = async () => {
-    const url = `https://cyf-please-let-me-in.onrender.com/formData`;
+    const url = `${process.env.REACT_APP_API_URL}/formData`;
     try {
       const response = await axios.get(url);
       setGetFormData(response.data);

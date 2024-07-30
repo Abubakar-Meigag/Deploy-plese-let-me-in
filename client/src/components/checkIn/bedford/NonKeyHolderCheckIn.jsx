@@ -17,7 +17,7 @@ const NonKeyHolderCheckIn = ({ guestData }) => {
     const formData = { slackUser, phoneNumber };
 
     try {
-      const response = await fetch(`https://cyf-please-let-me-in.onrender.com/submit`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

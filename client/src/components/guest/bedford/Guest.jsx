@@ -10,8 +10,8 @@ function Guest() {
   const fetchData = async () => {
     
     try {
-      const keyHolderData = await axios.get(`https://cyf-please-let-me-in.onrender.com/data`);
-      const guestData = await axios.get(`https://cyf-please-let-me-in.onrender.com/formData`);
+      const keyHolderData = await axios.get(`${process.env.REACT_APP_API_URL}/data`);
+      const guestData = await axios.get(`${process.env.REACT_APP_API_URL}/formData`);
 
       const collectData = [...keyHolderData.data, ...guestData.data];
       setKeyHolder(collectData);

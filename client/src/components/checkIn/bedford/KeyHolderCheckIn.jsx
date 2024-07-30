@@ -9,7 +9,7 @@ const KeyHolderCheckIn = ({ checkInPeople, status, setStatus }) => {
   const [error, setError] = useState(null);
 
   const checkMeIn = async () => {
-    const url = `https://cyf-please-let-me-in.onrender.com/checkIn`;
+    const url = `${process.env.REACT_APP_API_URL}/checkIn`;
     const body = { slack_user: keyHolderSlackUser };
 
     if (!keyHolderSlackUser) {
@@ -38,7 +38,7 @@ const KeyHolderCheckIn = ({ checkInPeople, status, setStatus }) => {
   };
 
   const checkMeOut = async () => {
-    const url = `https://cyf-please-let-me-in.onrender.com/checkOut`;
+    const url = `${process.env.REACT_APP_API_URL}/checkOut`;
     const body = { slack_user: keyHolderSlackUser };
 
     if (!keyHolderSlackUser) {

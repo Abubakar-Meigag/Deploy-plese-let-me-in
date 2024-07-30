@@ -9,7 +9,7 @@ const GuestCheckOut = ({ getFormData, guestData, guestUserStatus, setGuestUserSt
   const [error, setError] = useState(null);
 
   const guestCheckOut = async () => {
-    const url = `https://cyf-please-let-me-in.onrender.com/formCheckOut`;
+    const url = `${process.env.REACT_APP_API_URL}/formCheckOut`;
     const body = { slack_user: guestSlackUser };
 
     if (!guestSlackUser) {
@@ -36,7 +36,7 @@ const GuestCheckOut = ({ getFormData, guestData, guestUserStatus, setGuestUserSt
   };
 
   const deleteFormUser = async () => {
-    const url = `https://cyf-please-let-me-in.onrender.com/delete`;
+    const url = `${process.env.REACT_APP_API_URL}/delete`;
     const body = { slack_user: guestSlackUser };
 
     if (!guestSlackUser) {
