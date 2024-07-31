@@ -19,16 +19,16 @@ app.listen(port, () => {
 });
 
 // Import routes from endpoint folder
-const getData = require("./endPoint/getData");
-const checkIn = require("./endPoint/checkIn");
-const checkOut = require("./endPoint/checkOut");
-const postFormData = require("./endPoint/postFormData");
-const getFormData = require("./endPoint/getFormData");
-const formCheckOut = require("./endPoint/formCheckOut");
-const getDataForCititec = require("./endPoint/cititecData");
-const deleteFormData = require("./endPoint/deleteFormData");
-const checkInCititec = require("./endPoint/checkInCititec");
-const checkOutCititec = require("./endPoint/checkOutCititec");
+const getData = require("./apis/getData");
+const checkIn = require("./apis/checkIn");
+const checkOut = require("./apis/checkOut");
+const postFormData = require("./apis/postFormData");
+const getFormData = require("./apis/getFormData");
+const formCheckOut = require("./apis/formCheckOut");
+const getDataForCititec = require("./apis/cititecData");
+const deleteFormData = require("./apis/deleteFormData");
+const checkInCititec = require("./apis/checkInCititec");
+const checkOutCititec = require("./apis/checkOutCititec");
 
 // Set up routes
 app.get("/data", getData);
