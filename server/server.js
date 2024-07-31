@@ -4,7 +4,7 @@ const app = express();
 
 // Import dependencies
 const cors = require("cors");
-const port = process.env.PORT || 3099;
+const port = process.env.PORT || 3999;
 const pool = require("./database/data");
 const bodyParser = require("body-parser");
 
